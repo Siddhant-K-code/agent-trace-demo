@@ -11,6 +11,19 @@ session is committed under `.agent-traces/`. The
 findings (rationale, scope, validation, stewardship, evidence health), sets a
 check result, and uploads a metadata-only evidence packet.
 
+## tinytext API
+
+- `word_count(text)`: number of whitespace-separated words.
+- `sentence_count(text)`: number of sentences, split on runs of `.`, `!` or
+  `?`. Trailing text without a terminator counts as a sentence; blank text
+  returns 0.
+
+```python
+from tinytext import sentence_count
+
+sentence_count("One. Two! Three?")  # 3
+```
+
 Run the tests:
 
 ```bash
