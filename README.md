@@ -34,11 +34,20 @@ PYTHONPATH=src python3 -m unittest discover -s tests
 
 Recorded sessions usually stay local; agent-strace writes a `.gitignore` that
 ignores them. This repository commits them on purpose so the Action can read
-them and so you can replay them:
+them and so you can replay them. From the repository root:
 
 ```bash
-uvx agent-strace replay --trace-dir .agent-traces
+uvx agent-strace list
+uvx agent-strace replay <session-id>
+uvx agent-strace verify <session-id>
 ```
 
 Secret redaction was on when they were recorded. They contain the prompts,
 tool calls, and tool output of each session.
+
+One edit was made before committing: the OS username and hostname in each
+session's attribution, and the username in a local transcript path, were
+replaced with `USER` and `HOST`. That changed one event line, so the
+`prev_hash` of the event after it was recomputed. `agent-strace verify` passes
+on the committed files, but the hash chain is not the one written at record
+time.
