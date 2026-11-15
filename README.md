@@ -17,6 +17,16 @@ Run the tests:
 PYTHONPATH=src python3 -m unittest discover -s tests
 ```
 
+`tinytext.char_count(text, include_spaces=True)` counts the characters in
+`text`. Set `include_spaces=False` to exclude whitespace characters:
+
+```python
+from tinytext import char_count
+
+char_count("a b")  # 3
+char_count("a b", include_spaces=False)  # 2
+```
+
 ## What is committed, and why
 
 Recorded sessions usually stay local; agent-strace writes a `.gitignore` that
