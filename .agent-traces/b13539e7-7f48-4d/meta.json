@@ -1,0 +1,21 @@
+{
+  "session_id": "b13539e7-7f48-4d",
+  "started_at": 1794417930.272256,
+  "ended_at": 1794417949.805131,
+  "agent_name": "github-copilot",
+  "command": "github-copilot (new)",
+  "tool_calls": 7,
+  "total_duration_ms": 19532.875061035156,
+  "attribution": {
+    "os_user": "USER",
+    "hostname": "HOST",
+    "pid": 60588,
+    "ppid": 60467,
+    "agent_provider": "copilot",
+    "git_repo": "https://github.com/Siddhant-K-code/agent-trace-demo.git",
+    "git_branch": "add-sentence-count",
+    "git_commit": "0088142",
+    "working_dir": "/private/tmp/atdemo"
+  },
+  "conversation_id": "b13539e7-7f48-4d20-b042-762fb5ee44aa"
+}

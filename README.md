@@ -62,6 +62,15 @@ agent get no comment. See the
 ## tinytext API
 
 - `word_count(text)`: number of whitespace-separated words.
+- `sentence_count(text)`: number of sentences, split on runs of `.`, `!` or
+  `?`. Trailing text without a terminator counts as a sentence; blank text
+  returns 0.
+
+```python
+from tinytext import sentence_count
+
+sentence_count("One. Two! Three?")  # 3
+```
 
 ## Run the tests
 
