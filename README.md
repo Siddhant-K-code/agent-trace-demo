@@ -32,11 +32,19 @@ you can replay it:
 
 ```bash
 gh pr checkout 1 -R Siddhant-K-code/agent-trace-demo
-uvx agent-strace replay --trace-dir .agent-traces
+uvx agent-strace replay b13539e7-7f48-4d
+uvx agent-strace verify b13539e7-7f48-4d
 ```
 
 Secret redaction was on when it was recorded. It contains the prompt, tool
 calls and tool output of the session.
+
+One edit was made before committing: the OS username and hostname in the
+session's attribution, and the username in a local transcript path, were
+replaced with `USER` and `HOST`. That changed one event line, so the
+`prev_hash` of the event after it was recomputed. `agent-strace verify` passes
+on the committed files, but the hash chain is not the one written at record
+time.
 
 ## Try it on your repository
 
@@ -50,6 +58,10 @@ calls and tool output of the session.
 With no session, the comment looks like #3. Pull requests with no sign of an
 agent get no comment. See the
 [GitHub Action docs](https://github.com/Siddhant-K-code/agent-trace/blob/main/docs/review.md#github-action).
+
+## tinytext API
+
+- `word_count(text)`: number of whitespace-separated words.
 
 ## Run the tests
 
