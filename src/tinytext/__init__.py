@@ -1,5 +1,5 @@
 """Small text helpers."""
 
-from .words import word_count
+from .words import char_count, word_count
 
-__all__ = ["word_count"]
+__all__ = ["word_count", "char_count"]

@@ -62,6 +62,15 @@ agent get no comment. See the
 ## tinytext API
 
 - `word_count(text)`: number of whitespace-separated words.
+- `char_count(text, include_spaces=True)`: number of characters in `text`.
+  Set `include_spaces=False` to exclude whitespace characters.
+
+```python
+from tinytext import char_count
+
+char_count("a b")  # 3
+char_count("a b", include_spaces=False)  # 2
+```
 
 ## Run the tests
 
